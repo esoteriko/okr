@@ -11,17 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <html>
+    <title>Login 2</title>
+    <head></head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link type="text/css" href="style.css" rel="stylesheet"/> 
+<body>
+    <center>
+        <div class="container" >
+                <div class="panel">
+                        <h2 class="panel-header"><strong>Registro</strong></h2>
+                    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-sm"> </div>
+                    <div class="col-md-6">
+                        <div class="container">
+                        <%=form.label :Usuaio %>
+                        <%= form.text_field :name, placeholder: "Usuaio...", class: "form-control"%>
+                        </div>
+                        <br>
+                        <div class="container">
+                        
+                        <%= form.label :Contrasena%>
+                        <%= form.text_field :password, placeholder: "Contrasena", class: "form-control"%>
+                        
+                        </div><br>
+                        <div class="container">
+                            <%= form.submit%>
+                        </div>
+                    </div>
+                    <div class="col-sm"></div>
+                </div>
+            </div>
+            <%end%>
+            </center>
+</body>
+</html>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
