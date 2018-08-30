@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  description: MyString
+  period_value: 1
+  time_id: 1
+
+two:
+  user_id: 1
+  description: MyString
+  period_value: 1
+  time_id: 1
