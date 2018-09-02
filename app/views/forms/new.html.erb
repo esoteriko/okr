@@ -42,15 +42,11 @@
                 <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
               </div>
               <div class="col">
-                 
-              
-                <select class="form-control custom-select" data-toggle="popover" title="Seleccione la unidad de medida del tiempo" >
-                  
-                  <option value="1">Años</option>
-                  <option value="2">Meses</option>
-                  <option value="3">Semanas</option>
-                  <option value="4">Dias</option>
-                </select>
+              <%= select_tag(
+                :group_id,
+                options_for_select(
+                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
+                  :class =>'form-control custom-select')%>
               </div>
             </div>
           </div>
@@ -59,11 +55,11 @@
             <div class="row">
               <div class="col">
                 <div class="text-muted">Nivel</div>
-                <select class="form-control custom-select" data-toggle="popover" title="Seleccione en que nivel estara el objetivo">
-                  <option value="1">Empresa</option>
-                  <option value="2">Equipo</option>
-                  <option value="3">Personal</option>
-                </select>
+                <%= select_tag(
+                :group_id,
+                options_for_select(
+                  [["Selecciona una", ""], ["Empresa","1"], ["Equipo","2"], ["Personal","3"]]), 
+                  :class =>'form-control custom-select')%>
               </div>
               <div class="col">
                 <div class="text-muted">Grupo</div>
@@ -78,13 +74,12 @@
           </div>
 
           <div class="container"> <div class="text-muted">Relacion</div>
-            <select class="form-control custom-select" data-toggle="popover" title="Con que objetivos se relaciona este objetivo">
-              <option>Ninguno</option>
-              <option>Objetivo 1 (Descripcion)</option>
-              <option>Objetivo 2 (Descripcion)</option>
-              <option>Objetivo 3 (Descripcion)</option>
-              <option>Objetivo 4 (Descripcion)</option>
-            </select>
+            <%= select_tag(
+              :objective_id,
+              options_for_select(
+                [["Ninguno", ""], "Objetivo 1", "Objetivo 2", "Objetivo 3", "Objetivo 4", "Objetivo 5"]), 
+                :class =>'form-control custom-select')%>
+                <br>
           </div>
         </div>
 
@@ -95,10 +90,13 @@
         </div>
         <div class="container">
                 <button class="btn btn-primary" id="add" data-toggle="popover" title="Agregar mas campos">+</button>
+                <br><br>
+                <%=form.button "+", class:"btn btn-primary", id:"add"%>
+                
         </div>
 <br>
         <div class="container">
-          <button type="button" class="btn btn-primary" data-toggle="popover" title="Guardar el objetivo">Guardar</button>
+          <%=form.submit "Guardar", class:"btn btn-primary"%>
         </div>
         <%end%>
     </center>
