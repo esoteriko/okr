@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_214912) do
+ActiveRecord::Schema.define(version: 2018_09_03_213327) do
+
+  create_table "key_results", force: :cascade do |t|
+    t.integer "objective_id"
+    t.string "description"
+    t.integer "kr_measure_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["objective_id"], name: "index_key_results_on_objective_id"
+  end
 
   create_table "objectives", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_214912) do
     t.integer "time_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_objectives_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
