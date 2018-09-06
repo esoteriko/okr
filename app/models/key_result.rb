@@ -1,3 +1,4 @@
 class KeyResult < ApplicationRecord
-    beolongs_to :objectives
+    belongs_to :objectives
+    belongs_to :kr_measure
 end

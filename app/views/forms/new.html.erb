@@ -1,104 +1,18 @@
-<html>
-  <head></head>
-  <title>O K R</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  <link type="text/css" href="style.css" rel="stylesheet"/>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <script type="text/javascript" src="http://lineadecodigo.com/js/jquery/jquery.js"></script>
-  <script type="text/javascript">$ ( '# Identificador'). Popover (opciones)
-    $ (Function () {$ ( "[Datos de palanca = 'popover']") popover ();.});</script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#add").click(function() {
-        const n = $('tr:last td', $("#key")).length;
-        const tds = '<div class="row"><div class="col"><input type="text" class="form-control" placeholder="Escriba como llegar.."></div><div class="col-md-4"><select class="form-control custom-select" data-toggle="popover" title="Seleccione como medira el progreso"><option>Porcentaje</option><option>Numero</option><option>Si/No</option></select></div></div><br>';
-        for(var i = 0; i < n; i++){
-          tds += '';
-        }
-
-        $("#key").append(tds);
-      });
-    });
-
-  </script>
-  <body>
 <br><br><br>
-  <%=form_with scope: :form, local: true do |form|%> 
-    <center>
-      <div class="panel panel default">
-        <div class="panel">
-          <h2 class="panel-header"><strong>Formulario</strong></h2>
-        </div>
-        <div class="panel-body">
-          <div class="container">
-            <div class="text-muted ">Objetivo</div>
-            <%= form.text_field :description, class:"form-control", placeholder: "Escriba el objetivo"%>
-          </div>
+<center>
+<%=form_with scope: :form, local: true do |form|%> 
+  <br>
+  <%= form.text_field :description, class:"form-control", placeholder: "Escriba el objetivo"%>
+  <br>
+  <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
+  <br>
+  <%= select_tag(
+    :group_id,
+    options_for_select(
+      [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
+      :class =>'form-control custom-select')%>
+      <br>
+  <%= form.submit%>
 
-          <div class="container">
-            <div class="text-muted">Periodo de Tiempo</div>
-            <div class="row">
-              <div class="col">
-                <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
-              </div>
-              <div class="col">
-              <%= select_tag(
-                :group_id,
-                options_for_select(
-                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
-                  :class =>'form-control custom-select')%>
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <div class="text-muted">Nivel</div>
-                <%= select_tag(
-                :group_id,
-                options_for_select(
-                  [["Selecciona una", ""], ["Empresa","1"], ["Equipo","2"], ["Personal","3"]]), 
-                  :class =>'form-control custom-select')%>
-              </div>
-              <div class="col">
-                <div class="text-muted">Grupo</div>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">@</div>
-                  </div>
-                <%= form.text_field :name, class: "form-control", placeholder: "Nombre empresa, equipo o persona"%>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container"> <div class="text-muted">Relacion</div>
-            <%= select_tag(
-              :objective_id,
-              options_for_select(
-                [["Ninguno", ""], "Objetivo 1", "Objetivo 2", "Objetivo 3", "Objetivo 4", "Objetivo 5"]), 
-                :class =>'form-control custom-select')%>
-                <br>
-          </div>
-        </div>
-
-        <div class="container" id="key">
-            <div class="row">
-          <div class="col text-muted">Key Results</div> <div class="col text-muted"> Tipo de medida</div>
-          </div>
-        </div>
-        <div class="container">
-                <button class="btn btn-primary" id="add" data-toggle="popover" title="Agregar mas campos">+</button>
-                <br><br>
-                <%=form.button "+", class:"btn btn-primary", id:"add"%>
-                
-        </div>
-<br>
-        <div class="container">
-          <%=form.submit "Guardar", class:"btn btn-primary"%>
-        </div>
-        <%end%>
-    </center>
-  </body>
-</html>
+<%end%>
+</center>

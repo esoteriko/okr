@@ -4,7 +4,7 @@ class CreateObjectives < ActiveRecord::Migration[5.2]
       t.references :user, index: true
       t.string :description
       t.integer :period_value
-      t.integer :time_id
+      t.references :tiempo, index: true
 
       t.timestamps
     end
