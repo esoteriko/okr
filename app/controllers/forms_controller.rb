@@ -1,6 +1,7 @@
 class FormsController < ApplicationController
     def index
         @objective = Objective.all
+        @key_result = KeyResult.all
     end
     def new
         @objective = Objective.new
@@ -10,7 +11,7 @@ class FormsController < ApplicationController
         #@user = User.find(params[:user_id])
         #@objective = @user.objectives.create(objective_params)
         #redirect_to users_path(@user)
-        @objective = Objective.new(objective_params)
+        @form = Form.new(objective_params)
  
         if @objective.save
             flash[:succes] = "Objective was created"
@@ -25,7 +26,7 @@ class FormsController < ApplicationController
     
 
     def objective_params
-    params.require(:user).permit(:description,:period_value,:time_id) 
+    params.require(:form).permit(:description,:period_value,:time_id) 
     end
 
 
