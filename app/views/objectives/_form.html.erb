@@ -1,13 +1,13 @@
 <br><br><br>
 <center>
-<%= form_for @objective, url:  {action: "create"}, html: {class: "nifty_form"} do |f| %>
+    <%= form_with(model: @objective, local: true) do |f| %>
   <br>
   <%= f.text_field :description, class:"form-control", placeholder: "Escriba el objetivo"%>
   <br>
   <%= f.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
   <br>
   <%= select_tag(
-    :group_id,
+    :tiempo_id,
     options_for_select(
       [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
       :class =>'form-control custom-select')%>

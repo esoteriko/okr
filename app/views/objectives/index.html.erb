@@ -1,0 +1,35 @@
+<br><br>
+<center>
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Objectivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Period Value</th>
+      <th>TIempo_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @objectives.each do |objective| %>
+      <tr>
+        <td><%= objective.description %></td>
+        <td><%= objective.period_value %></td>
+        <td><%= objective.tiempo_id %></td>
+        <td><%= link_to 'Show', objective %></td>
+        <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
+        <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New objective', new_objective_path %>
+</div></center  >

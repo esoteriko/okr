@@ -1,0 +1,24 @@
+<br><br><br>
+<center>
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>description:</strong>
+  <%= @objective.description %>
+</p>
+
+<p>
+  <strong>periodo de tiempo:</strong>
+  <%= @objective.period_value %>
+</p>
+<p>
+  <strong>tiempo:</strong>
+  <%= @objective.tiempo_id %>
+</p>
+
+<%= link_to 'Edit', edit_objective_path(@objective) %> |
+<%= link_to 'Back', objectives_path %>
+</div>
+</center>
+

@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :objective do
-    resources :key_result
-  end
   resources :users
   get 'principal/index'
   resources :forms 
+  resources :objectives
   
   
   root 'principal#index'

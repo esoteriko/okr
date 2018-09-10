@@ -10,11 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_222155) do
+ActiveRecord::Schema.define(version: 2018_09_06_201411) do
 
   create_table "group_objectives", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "group_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.integer "group_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_type_id"], name: "index_groups_on_group_type_id"
+  end
+
+  create_table "groups_objectives", id: false, force: :cascade do |t|
+    t.integer "groups_id"
+    t.integer "objectives_id"
+    t.index ["groups_id"], name: "index_groups_objectives_on_groups_id"
+    t.index ["objectives_id"], name: "index_groups_objectives_on_objectives_id"
   end
 
   create_table "key_results", force: :cascade do |t|
