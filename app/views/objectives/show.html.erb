@@ -4,18 +4,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>description:</strong>
-  <%= @objective.description %>
+  <strong>Objective:</strong>
+  <%= @objective %>
 </p>
+<p>Key Result</p>
+<% if @objective.key_results.any? %>
+  <ul>
+    <% @objective.key_results.each do |result| %>
+    <li><%= link_to result, result %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>no hay sucursales</p>
+<% end %>
 
-<p>
-  <strong>periodo de tiempo:</strong>
-  <%= @objective.period_value %>
-</p>
-<p>
-  <strong>tiempo:</strong>
-  <%= @objective.tiempo_id %>
-</p>
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>
