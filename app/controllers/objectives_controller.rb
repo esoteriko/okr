@@ -69,7 +69,7 @@
         
             # Never trust parameters from the scary internet, only allow the white list through.
             def objective_params
-              params.require(:objective).permit(:description, key_results_attributes: [:description])
+              params.require(:objective).permit(:description, period_value, tiempo_id, key_results_attributes: [:description, :kr_measure_id])
             end
         end
         

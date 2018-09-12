@@ -1,20 +1,17 @@
 <br><br><br>
 <center>
-    <%= form_with(model: @objective, local: true) do |f| %>
-    #<%= f.fields_for :key_results do | result | %>
-  <br>
-  #<%= result.label :description, "descripcion" %><br>
-  #<%= result.text_field :description %><br>
-  <%= f.text_field :description, class:"form-control", placeholder: "Escriba el objetivo"%>
-  #<br>
-  <%= f.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
-  #<br>
-  #<%= select_tag(
-   # :tiempo_id,
-    #options_for_select(
-     # [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
-      #:class =>'form-control custom-select')%>
-      #<br>
-  <%= f.submit%>
+<%= form_for(objective) do |f| %><br>
+  <%= f.text_field :description, placeholder: "Escriba el objetivo"%>
+  <%= f.text_field :period_value, placeholder: "Escriba el objetivo"%>
+  <%= f.text_field :tiempo_id, placeholder: "Escriba el objetivo"%>
+
+  <%= f.fields_for(:key_results) do |key_result_form| %>
+    <%=key_result_form.text_field :description%>
+    <%=key_result_form.text_field :kr_measure_id%>
+  <%end%>
+  <%f.submit%>
+<%end%>
+
+  
 
 </center>

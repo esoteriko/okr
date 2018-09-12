@@ -6,9 +6,5 @@ class Objective < ApplicationRecord
 
     accepts_nested_attributes_for :key_results
    
-    def to_s
-        description
-    end
-
 end
 
