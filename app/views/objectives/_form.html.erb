@@ -1,15 +1,37 @@
 <br><br><br>
 <center>
+<h1>Formulario</h1>
 <%= form_for(objective) do |f| %><br>
-  <%= f.text_field :description, placeholder: "Escriba el objetivo"%>
-  <%= f.text_field :period_value, placeholder: "Escriba el objetivo"%>
-  <%= f.text_field :tiempo_id, placeholder: "Escriba el objetivo"%>
-
+  <%= f.label :Descripcion%><br>
+  <%= f.text_field :description, placeholder: "Escriba el objetivo", class:"form-control"%>
+  <br>
+  <%= f.label :Periodo%><br>
+  <%= f.text_field :period_value, placeholder: "Escriba el objetivo", class:"form-control"%>
+  <br>
+  <%= f.label :Numero%><br>
+  <%= select_tag(
+                :timepo_id,
+                options_for_select(
+                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
+                  :class =>'form-control custom-select')%>
+  <br>
   <%= f.fields_for(:key_results) do |key_result_form| %>
-    <%=key_result_form.text_field :description%>
-    <%=key_result_form.text_field :kr_measure_id%>
-  <%end%>
-  <%f.submit%>
+    <%= f.label :DescripcionOKR %><br>
+    <%=key_result_form.text_field :description, class:"form-control"%>
+    <br>
+    <%= f.label :Numero%><br>
+    <%= select_tag(
+                :kr_measure_id,
+                options_for_select(
+                  [["Selecciona una", ""], ["POrcentaje","1"], ["Si/NO","2"], ["Numero","3"]]), 
+                  :class =>'form-control custom-select')%>
+    <br><br>
+    <%end%>
+    <br>
+    <div class=”actions”>
+
+   <%= f.submit %>
+</div>
 <%end%>
 
   

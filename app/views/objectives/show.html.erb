@@ -4,22 +4,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>user_id:</strong>
+  <strong>Usuario:</strong>
   <%= @objective.user.name%>
 </p>
 
 <p>
-  <strong>description:</strong>
+  <strong>Descripcion del objetivo:</strong>
   <%= @objective.description%>
 </p>
 
 <p>
-  <strong>period_value:</strong>
-  <%= @objective.period_value %>
+  <strong>Periodo de Tiempo:</strong>
+  <%= @objective.period_value %> <%= @objective.tiempo.name%>
 </p>
 <p>
-  <strong>tiempo_id:</strong>
-  <%= @objective.tiempo_id %>
+  <strong>Okr:</strong>
+  
 </p>
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>

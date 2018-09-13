@@ -8,9 +8,10 @@
 <table>
   <thead>
     <tr>
+      <th>Usuario</th>
       <th>Descripcion</th>
-      <th>Period Value</th>
-      <th>TIempo_id</th>
+      <th>Numero</th>
+      <th>TIempo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
   <tbody>
     <% @objectives.each do |objective| %>
       <tr>
+        <td><%= objective.user.name %></td>
         <td><%= objective.description %></td>
         <td><%= objective.period_value %></td>
-        <td><%= objective.tiempo_id %></td>
+        <td><%= objective.tiempo.name %></td>
         <td><%= link_to 'Show', objective %></td>
         <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
         <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' } %></td>
