@@ -19,8 +19,20 @@
 </p>
 <p>
   <strong>Okr:</strong>
+  <%=@objective.key_results%>
   
 </p>
+<p><strong>key_results</strong></p>
+ 
+<% if @objective.key_results.any? %>
+  <ul>
+    <% @objective.key_results.each do |result| %>
+    <li><%= link_to result, result %></li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>no hay key_results</p>
+<% end %>
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>
 </div>

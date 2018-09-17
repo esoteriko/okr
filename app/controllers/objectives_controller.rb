@@ -19,6 +19,7 @@
         
           # GET /users/1/edit
           def edit
+            @objective.key_results.build
           end
         
           # POST /users
@@ -69,7 +70,7 @@
         
             # Never trust parameters from the scary internet, only allow the white list through.
             def objective_params
-              params.require(:objective).permit(:description, :period_value, :tiempo_id, key_results_attributes: [:description, :kr_measure_id])
+              params.require(:objective).permit(:description, :period_value, :tiempo_id, key_results_attributes: [:id, :description, :kr_measure_id])
             end
         end
         
