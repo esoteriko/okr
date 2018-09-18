@@ -1,0 +1,19 @@
+<br><br><br>
+<center>
+<h1>Formulario</h1>
+  <%= form_with(model: key_result, local: true) do |form| %><br>
+  <%= form.label :Descripcion%><br>
+  <%= form.text_field :description, placeholder: "Escriba el objetivo", class:"form-control"%>
+  <br>
+  <%= form.label :Medida%><br>
+  <%= form.text_field :kr_measure_id, placeholder: "Escriba el objetivo", class:"form-control"%>
+    <br>
+    <div class=”actions”>
+
+   <%= form.submit %>
+</div>
+<%end%>
+
+  
+
+</center>
