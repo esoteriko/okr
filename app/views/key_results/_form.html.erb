@@ -10,23 +10,30 @@
       </ul>
     </div>
   <% end %>
+<center>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+<h2><stronger>key_result</stronger></h2>
+    <div class="container">
+    <div class="text-muted">descripcion</div>
+    <%= form.text_field :description, class:"form-control" %>
+    </div>
+<br>
+
+  <div class="container">
+    <div class="text-muted">Objetivo</div>
+    <%= form.text_field :objective_id, class:"form-control" %>
   </div>
-
-  <div class="field">
-    <%= form.label :objective_id %>
-    <%= form.text_field :objective_id %>
+  <br>
+  <div class="container">
+    <div class="text-muted">Medida</div>
+    <%= form.text_field :kr_measure_id, class:"form-control" %>
   </div>
-
-  <div class="field">
-    <%= form.label :kr_measure_id %>
-    <%= form.text_field :kr_measure_id %>
-  </div>
-
+<br>
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit "Guardar", class:"btn" %>
+     </div>
+</center>
+</div>
+  
+  
 <% end %>

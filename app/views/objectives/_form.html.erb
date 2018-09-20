@@ -1,3 +1,4 @@
+
 <%= form_with(model: objective, local: true) do |form| %>
   <% if objective.errors.any? %>
     <div id="error_explanation">
@@ -11,38 +12,83 @@
     </div>
   <% end %>
 
-  <div class="field">
-  <%= form.label :Descripcion%><br>
-  <%= form.text_field :description, placeholder: "Escriba el objetivo", class:"form-control"%>
-  </div>
+  <center>
+  <div class="panel panel default">
+    <div class="panel">
+      <h2 class="panel-header"><strong>Formulario</strong></h2>
+    </div>
+    <div class="panel-body">
+      <div class="container">
+        <div class="text-muted ">Objetivo</div>
+        <%= form.text_field :description, class:"form-control", placeholder: "Escriba el objetivo"%>
+      </div>
+<br>
+      <div class="container">
+        <div class="text-muted">Periodo de Tiempo</div>
+        <div class="row">
+          <div class="col">
+            <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
+          </div>
+          <div class="col">
+          <%=form.number_field :tiempo_id, placeholder: "Escirba periodo de tiempo", class:"form-control"%>
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="text-muted">grupo</div>
+            <br>
+          </div>
+          <div class="col">
+            <div class="text-muted">nombre del grupo</div>
+            <br>
+      </div>
 
-  <div class="field">
-  <%= form.label :Periodo%><br>
-  <%= form.number_field :period_value, placeholder: "Escriba el objetivo", class:"form-control"%>
-  </div>
+      
 
-  <div class="field">
-  <%= form.label :Numero%><br>
-  <%=form.text_field :tiempo_id, placeholder: "Escirba periodo de tiempo", class:"form-control"%>
-  </div>
+      <div class="container"> <div class="text-muted">Descripcion del key result</div>
+      
+      <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <%= form.text_field :user_id, placeholder: "Escribe el usuario", class:"form-control" %>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+<br>
+    <%= form.fields_for(:key_results) do |result| %>
 
-  <div class="field">
-    <%= form.label :usuario %>
-    <%= form.text_field :user_id, placeholder: "Escribe el usuario", class:"form-control" %>
-  </div>
+    <div class="container">
+        <div class="row">
+      <div class="col text-muted">Key Results</div> <div class="col text-muted"> Tipo de medida</div>
+      </div>
+    </div>
 
-  <%= form.fields_for(:key_results) do |result| %>
-    <br><%= result.label :Descripcion_OKR %>
-    <%=result.text_field :description, class:"form-control"%>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        <%=result.text_field :description,placeholder:"Descripcion del Key Result",class:"form-control"%>
+      </div>
+      <div class="col-md-4">
+      <%= result.text_field :kr_measure_id,placeholder:"Como deseas medir el okr",class:"form-control"%>
+      </div>
+    </div>
+    <br>  
     <br>
-    <%= result.label :Medida%><br>
-    <%= result.text_field :kr_measure_id, class:"form-control"%>
-  
-    <br><br>
+  </div>
+  <%end%>
+<br>
+    <div class="container">
+      <%=form.submit "Guardar", class:"btn btn-primary"%>
+    </div>
     <%end%>
-    <br>
+</center>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  

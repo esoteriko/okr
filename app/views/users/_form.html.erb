@@ -1,11 +1,5 @@
-<br><br><br>
+<br>
 <%= form_with(model: user, local: true) do |form| %>
-  <html>
-    <title>Login 2</title>
-    <head></head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link type="text/css" href="style.css" rel="stylesheet"/> 
-<body>
     <center>
         <div class="container" >
                 <div class="panel">
@@ -27,18 +21,18 @@
                   <% end %>
 
                         <div class="container">
-                        <%=form.label :Usuario %>
+                        <label form="user">Usuario</label><br>
                         <%= form.text_field :name, placeholder: "Usuaio...", class: "form-control"%>
                         </div>
                         <br>
                         <div class="container">
                         
                         <%= form.label :Contraseña%>
-                        <%= form.password_field :password, placeholder: "Contrasena", class: "form-control"%>
+                        <%= form.password_field :password, placeholder: "Contraseña", class: "form-control"%>
                         
                         </div><br>
                         <div class="container">
-                            <%= form.submit%>
+                            <%=form.submit "Guardar", class:"btn btn-primary"%>
                         </div>
                     </div>
                     <div class="col-sm"></div>
@@ -46,6 +40,3 @@
             </div>
             <%end%>
             </center>
-</body>
-</html>
-

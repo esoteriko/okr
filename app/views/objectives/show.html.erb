@@ -1,32 +1,27 @@
-<br><br><br>
-<p id="notice"><%= notice %></p>
+<br>
+<center>
+<div class="container">
+<div class="card">
+<div class="card-body">
+<strong class="cart-title">Objetivos creados</strong><br><br>
 
 <p>
-  <strong>Tiempo:</strong>
+  <strong class="card-subtitle mb-2 text-muted">User name:</strong>
   <%= @objective.user.name %>
 </p>
 
-
 <p>
-  <strong>Description:</strong>
+  <strong class="card-subtitle mb-2 text-muted">Descripcion:</strong>
   <%= @objective.description %>
 </p>
 
 <p>
-  <strong>Period value:</strong>
-  <%= @objective.period_value %><%= @objective.tiempo.name%>
+  <strong class="card-subtitle mb-2 text-muted">Periodo de tiempo:</strong>
+  <%= @objective.period_value %> <%= @objective.tiempo.name%>
 </p>
 
-<p>
-  <strong>Tiempo:</strong>
-  <%= @objective.tiempo.name %>
-</p>
+<p><strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
 
-<strong>Okr:</strong>
-
-</p>
-<p><strong>key_results</strong></p>
- 
 <% if @objective.key_results.any? %>
   <ul>
     <% @objective.key_results.each do |result| %>
@@ -36,7 +31,13 @@
 <% else %>
   <p>no hay key_results</p>
 <% end %>
+</p>
+<p id="notice"><%= notice %></p>
 
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>
+</div>
+</div>
+</div>
+</center>

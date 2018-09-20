@@ -1,20 +1,25 @@
 <br><br><br>
 <center>
 <div class="container">
-<p id="notice"><%= notice %></p>
-
+<div class="card">
+<div class="card-body">
+<strong class="cart-title">Usuario creado</strong><br><br>
 <p>
-  <strong>Name:</strong>
+  <strong class="card-subtitle mb-2 text-muted">User Name:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong class="card-subtitle mb-2 text-muted">Password:</strong>
+  <%= @user %>
 </p>
+
+<p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
+</div>
 </div>
 </center>
 
