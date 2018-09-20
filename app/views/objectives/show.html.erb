@@ -1,26 +1,29 @@
 <br><br><br>
-<center>
-<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Usuario:</strong>
-  <%= @objective.user.name%>
+  <strong>Tiempo:</strong>
+  <%= @objective.user.name %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @objective.description %>
 </p>
 
 <p>
-  <strong>Descripcion del objetivo:</strong>
-  <%= @objective.description%>
+  <strong>Period value:</strong>
+  <%= @objective.period_value %><%= @objective.tiempo.name%>
 </p>
 
 <p>
-  <strong>Periodo de Tiempo:</strong>
-  <%= @objective.period_value %> <%= @objective.tiempo.name%>
+  <strong>Tiempo:</strong>
+  <%= @objective.tiempo.name %>
 </p>
-<p>
-  <strong>Okr:</strong>
-  <%=@objective.key_results%>
-  
+
+<strong>Okr:</strong>
+
 </p>
 <p><strong>key_results</strong></p>
  
@@ -33,8 +36,7 @@
 <% else %>
   <p>no hay key_results</p>
 <% end %>
+
+
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>
-</div>
-</center>
-

@@ -1,16 +1,36 @@
-<br><br><br>
-<center>
-<h1>Formulario</h1>
-  <%= form_with(model: objective, local: true) do |form| %><br>
+<%= form_with(model: objective, local: true) do |form| %>
+  <% if objective.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(objective.errors.count, "error") %> prohibited this objective from being saved:</h2>
+
+      <ul>
+      <% objective.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
   <%= form.label :Descripcion%><br>
   <%= form.text_field :description, placeholder: "Escriba el objetivo", class:"form-control"%>
-  <br>
+  </div>
+
+  <div class="field">
   <%= form.label :Periodo%><br>
-  <%= form.text_field :period_value, placeholder: "Escriba el objetivo", class:"form-control"%>
-  <br>
+  <%= form.number_field :period_value, placeholder: "Escriba el objetivo", class:"form-control"%>
+  </div>
+
+  <div class="field">
   <%= form.label :Numero%><br>
   <%=form.text_field :tiempo_id, placeholder: "Escirba periodo de tiempo", class:"form-control"%>
-  <br>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuario %>
+    <%= form.text_field :user_id, placeholder: "Escribe el usuario", class:"form-control" %>
+  </div>
+
   <%= form.fields_for(:key_results) do |result| %>
     <br><%= result.label :Descripcion_OKR %>
     <%=result.text_field :description, class:"form-control"%>
@@ -21,12 +41,8 @@
     <br><br>
     <%end%>
     <br>
-    <div class=”actions”>
 
-   <%= form.submit %>
-</div>
-<%end%>
-
-  
-
-</center>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

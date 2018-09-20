@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tiempos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tiempos.each do |tiempo| %>
+      <tr>
+        <td><%= tiempo.name %></td>
+        <td><%= link_to 'Show', tiempo %></td>
+        <td><%= link_to 'Edit', edit_tiempo_path(tiempo) %></td>
+        <td><%= link_to 'Destroy', tiempo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tiempo', new_tiempo_path %>

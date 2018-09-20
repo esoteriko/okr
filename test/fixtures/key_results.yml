@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  objective_id: 1
   description: MyString
-  kr_measure_id: 1
+  objective: one
+  kr_measure: one
 
 two:
-  objective_id: 1
   description: MyString
-  kr_measure_id: 1
+  objective: two
+  kr_measure: two

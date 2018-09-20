@@ -1,0 +1,22 @@
+<%= form_with(model: kr_measure, local: true) do |form| %>
+  <% if kr_measure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kr_measure.errors.count, "error") %> prohibited this kr_measure from being saved:</h2>
+
+      <ul>
+      <% kr_measure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

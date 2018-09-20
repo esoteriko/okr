@@ -1,20 +1,21 @@
 <br><br><br>
-<center>
-<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Descripcion del key result:</strong>
-  <%= @key_result.description%>
+  <strong>Objective:</strong>
+  <%= @key_result.objective.description %>
 </p>
 
 <p>
-  <strong>Periodo de Medida:</strong>
-  <%= @key_result.kr_measure_id %>
+  <strong>Description:</strong>
+  <%= @key_result.description %>
+</p>  
+
+
+<p>
+  <strong>Kr measure:</strong>
+  <%= @key_result.kr_measure.name %>
 </p>
 
 <%= link_to 'Edit', edit_key_result_path(@key_result) %> |
 <%= link_to 'Back', key_results_path %>
-</div>
-</center>
-

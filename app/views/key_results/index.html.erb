@@ -1,15 +1,13 @@
-<br><br>
-<center>
-<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Key Result</h1>
+<h1>Key Results</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Descripcion</th>
-      <th>Medida</th>
+      <th>Description</th>
+      <th>Objective</th>
+      <th>Kr measure</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,20 +15,17 @@
   <tbody>
     <% @key_results.each do |key_result| %>
       <tr>
-        <td><%= key_result.user.name %></td>
         <td><%= key_result.description %></td>
-        <td><%= key_result.period_value %></td>
-        <td><%= key_result.tiempo.name %></td>
+        <td><%= key_result.objective %></td>
+        <td><%= key_result.kr_measure %></td>
         <td><%= link_to 'Show', key_result %></td>
         <td><%= link_to 'Edit', edit_key_result_path(key_result) %></td>
         <td><%= link_to 'Destroy', key_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %><br>
-   
+    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New key_result', new_key_result_path %>
-</div></center  >
+<%= link_to 'New Key Result', new_key_result_path %>

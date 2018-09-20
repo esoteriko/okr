@@ -1,19 +1,32 @@
-<br><br><br>
-<center>
-<h1>Formulario</h1>
-  <%= form_with(model: key_result, local: true) do |form| %><br>
-  <%= form.label :Descripcion%><br>
-  <%= form.text_field :description, placeholder: "Escriba el objetivo", class:"form-control"%>
-  <br>
-  <%= form.label :Medida%><br>
-  <%= form.text_field :kr_measure_id, placeholder: "Escriba el objetivo", class:"form-control"%>
-    <br>
-    <div class=”actions”>
+<%= form_with(model: key_result, local: true) do |form| %>
+  <% if key_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(key_result.errors.count, "error") %> prohibited this key_result from being saved:</h2>
 
-   <%= form.submit %>
-</div>
-<%end%>
+      <ul>
+      <% key_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
 
-</center>
+  <div class="field">
+    <%= form.label :objective_id %>
+    <%= form.text_field :objective_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kr_measure_id %>
+    <%= form.text_field :kr_measure_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

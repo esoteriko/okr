@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_06_201411) do
-
-  create_table "group_objectives", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_09_19_230211) do
 
   create_table "group_types", force: :cascade do |t|
     t.string "name"
@@ -39,11 +34,12 @@ ActiveRecord::Schema.define(version: 2018_09_06_201411) do
   end
 
   create_table "key_results", force: :cascade do |t|
-    t.integer "objective_id"
     t.string "description"
+    t.integer "objective_id"
     t.integer "kr_measure_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["kr_measure_id"], name: "index_key_results_on_kr_measure_id"
     t.index ["objective_id"], name: "index_key_results_on_objective_id"
   end
 
@@ -54,10 +50,10 @@ ActiveRecord::Schema.define(version: 2018_09_06_201411) do
   end
 
   create_table "objectives", force: :cascade do |t|
-    t.integer "user_id"
     t.string "description"
     t.integer "period_value"
     t.integer "tiempo_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tiempo_id"], name: "index_objectives_on_tiempo_id"
