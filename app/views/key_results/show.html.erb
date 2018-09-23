@@ -1,3 +1,16 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <br><br><br>
 <center>
 <div class="container">
@@ -38,8 +51,8 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_key_result_path(@key_result) %> |
-<%= link_to 'Back', key_results_path %>
+<%= link_to 'Edit', edit_key_result_path(@key_result), class:"customLink" %> |
+<%= link_to 'Back', key_results_path, class:"customLink" %>
 </div>
 </div>
 </div>

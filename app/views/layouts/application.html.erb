@@ -1,6 +1,20 @@
 <!DOCTYPE html>
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <html>
   <head>
+  
     <title>Okr</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,10 +26,10 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <div class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
-      <a class="navbar-brand"><%=link_to 'Inicio', root_path%></a>
-      <a class="navbar-brand"><%=link_to 'Formulario', new_objective_path%></a>
-      <a class="navbar-brand"><%=link_to 'Key Results', new_key_result_path%></a>
-      <a class="navbar-brand"><%=link_to 'User', new_user_path%></a>
+      <a class="navbar-brand"><%=link_to 'Inicio', root_path, class:"customLink"%></a>
+      <a class="navbar-brand"><%=link_to 'Formulario', new_objective_path, class:"customLink"%></a>
+      <a class="navbar-brand"><%=link_to 'Key Results', new_key_result_path, class:"customLink"%></a>
+      <a class="navbar-brand"><%=link_to 'User', new_user_path, class:"customLink"%></a>
       
         <span class="navbar-toggler-icon"></span>
     </nav>

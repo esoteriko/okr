@@ -14,23 +14,25 @@
 
 <h2><stronger>key_result</stronger></h2>
     <div class="container">
-    <div class="text-muted">descripcion</div>
+    <div class="text-muted">Descripcion</div>
     <%= form.text_field :description, class:"form-control" %>
     </div>
 <br>
 
   <div class="container">
     <div class="text-muted">Objetivo</div>
-    <%= form.text_field :objective_id, class:"form-control" %>
+    <%=form.number_field :objective_id, class:"form-control"%>
   </div>
   <br>
   <div class="container">
     <div class="text-muted">Medida</div>
-    <%= form.text_field :kr_measure_id, class:"form-control" %>
+    <%= select_tag(:kr_measure_id,options_for_select(
+                  [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]), 
+                  :class =>'form-control custom-select')%>
   </div>
 <br>
   <div class="actions">
-    <%= form.submit "Guardar", class:"btn" %>
+    <%= form.submit "Guardar", class:"btn btn-primary" %>
      </div>
 </center>
 </div>

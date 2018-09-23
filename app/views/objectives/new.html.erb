@@ -1,5 +1,18 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <br><br>
 
 <%= render 'form', objective: @objective %>
 
-<%= link_to 'Back', objectives_path %>
+<%= link_to 'Back', objectives_path, class:"customLink"%>

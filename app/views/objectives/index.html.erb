@@ -1,3 +1,16 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <p id="notice"><%= notice %></p>
 <center>
 <h1>Objectives</h1>
@@ -20,15 +33,15 @@
         <td><%= objective.period_value %></td>
         <td><%= objective.tiempo.name %></td>
         <td><%= objective.user.name %></td>
-        <td><%= link_to 'Show', objective %></td>
-        <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
-        <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', objective, class:"customLink" %></td>
+        <td><%= link_to 'Edit', edit_objective_path(objective), class:"customLink" %></td>
+        <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Objective', new_objective_path %>
+<%= link_to 'New Objective', new_objective_path, class:"customLink" %>
 </center>
 </div>

@@ -1,3 +1,16 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <p id="notice"><%= notice %></p>
 <center>
 <h1>Key Results</h1>
@@ -18,9 +31,9 @@
         <td><%= key_result.description %></td>
         <td><%= key_result.objective.description %></td>
         <td><%= key_result.kr_measure.name %></td>
-        <td><%= link_to 'Show', key_result %></td>
-        <td><%= link_to 'Edit', edit_key_result_path(key_result) %></td>
-        <td><%= link_to 'Destroy', key_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', key_result, class:"customLink"  %></td>
+        <td><%= link_to 'Edit', edit_key_result_path(key_result), class:"customLink" %></td>
+        <td><%= link_to 'Destroy', key_result, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,6 +41,6 @@
 
 <br>
 
-<%= link_to 'New Key Result', new_key_result_path %>
+<%= link_to 'New Key Result', new_key_result_path, class:"customLink" %>
 </center>
 </div>

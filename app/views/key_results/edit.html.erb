@@ -1,7 +1,19 @@
 <center>
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
 
+
+</style>
 <%= render 'form', key_result: @key_result %>
 
-<%= link_to 'Show', @key_result %> |
-<%= link_to 'Back', key_results_path %>
+<%= link_to 'Show', @key_result, class:"customLink" %> |
+<%= link_to 'Back', key_results_path, class:"customLink" %>
 </center>

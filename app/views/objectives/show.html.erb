@@ -1,3 +1,16 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+
+
+</style>
 <br>
 <center>
 <div class="container">
@@ -43,7 +56,7 @@
 <% if @objective.key_results.any? %>
   <ul class="lis-group list-group-flush">
     <% @objective.key_results.each do |result| %>
-    <li class="list-group-item"><%= link_to result, result %></li> 
+    <li class="list-group-item"><%= link_to result, result, class:"customLink" %></li> 
     <% end %>
   </ul>
 <% else %>
@@ -55,8 +68,8 @@
 </table>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_objective_path(@objective) %> |
-<%= link_to 'Back', objectives_path %>
+<%= link_to 'Edit', edit_objective_path(@objective), class:"customLink" %> |
+<%= link_to 'Back', objectives_path, class:"customLink" %>
 </div>
 </div>
 </div>
