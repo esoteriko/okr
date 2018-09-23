@@ -5,35 +5,55 @@
 <div class="card-body">
 <strong class="cart-title">Objetivos creados</strong><br><br>
 
-<p>
+<table class="table">
+<tbody>
+
+<tr>
+<th scope="row">
   <strong class="card-subtitle mb-2 text-muted">User name:</strong>
+</th>
+<td>
   <%= @objective.user.name %>
-</p>
+</td>
+</tr>
 
-<p>
+<tr>
+<th scope="row">
   <strong class="card-subtitle mb-2 text-muted">Descripcion:</strong>
+</th>
+<td>
   <%= @objective.description %>
-</p>
+</td>
+</tr>
 
-<p>
+<tr>
+<th scope="row">
   <strong class="card-subtitle mb-2 text-muted">Periodo de tiempo:</strong>
+</th>
+<td>
   <%= @objective.period_value %> <%= @objective.tiempo.name%>
-</p>
+</td>
+</tr>
 
-<p><strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
-
+<tr>
+<th>
+  <strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
+</th>
+<td>
 <% if @objective.key_results.any? %>
-  <ul>
+  <ul class="lis-group list-group-flush">
     <% @objective.key_results.each do |result| %>
-    <li><%= link_to result, result %></li> 
+    <li class="list-group-item"><%= link_to result, result %></li> 
     <% end %>
   </ul>
 <% else %>
   <p>no hay key_results</p>
 <% end %>
-</p>
-<p id="notice"><%= notice %></p>
 
+</td>
+</tbody>
+</table>
+<p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>

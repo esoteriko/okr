@@ -4,17 +4,31 @@
 <div class="card">
 <div class="card-body">
 <strong class="cart-title">Usuario creado</strong><br><br>
-<p>
-  <strong class="card-subtitle mb-2 text-muted">User Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong class="card-subtitle mb-2 text-muted">Password:</strong>
-  <%= @user %>
-</p>
+<table class="table">
+<tbody>
+ <tr>
+  <th scope="row">
+    <strong class="card-subtitle mb-2 text-muted">User Name:</strong>
+  </th>
+  <td>
+    <%= @user.name %>
+  </td>
+ </tr>
 
-<p id="notice"><%= notice %></p>
+ <tr>
+  <th scope="row">
+    <strong class="card-subtitle mb-2 text-muted">Password:</strong>
+  </th>
+  <td>
+    <%= @user %>
+  </td>
+ </tr>
+
+</tbody>
+</table>
+
+<p id="notice"><%= notice %> <span class="glyphicon glyphicon-ok"></p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

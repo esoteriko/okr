@@ -1,21 +1,46 @@
 <br><br><br>
+<center>
+<div class="container">
+<div class="card">
+<div class="card-body">
+<strong class="cart-title">Key Result Creado</strong><br><br>
+<table class="table">
+
+<tr>
+<th scope="row">
+  <strong>Objective:</strong>
+</th>
+<td>
+  <%= @key_result.objective.description %>
+</td>
+</tr>
+
+<tr>
+<th scope="row">
+  <strong>Description:</strong>
+</th>
+<td>
+  <%= @key_result.description %>
+</td>
+</tr>  
+
+<tr>
+<th scope="row">
+  <strong>Kr measure:</strong>
+</th>
+<td>
+  <%= @key_result.kr_measure.name %>
+</td>
+</tr>
+</tbody>
+</table>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Objective:</strong>
-  <%= @key_result.objective.description %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @key_result.description %>
-</p>  
-
-
-<p>
-  <strong>Kr measure:</strong>
-  <%= @key_result.kr_measure.name %>
-</p>
 
 <%= link_to 'Edit', edit_key_result_path(@key_result) %> |
 <%= link_to 'Back', key_results_path %>
+</div>
+</div>
+</div>
+</center>

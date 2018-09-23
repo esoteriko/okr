@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <h1>Objectives</h1>
-
-<table>
-  <thead>
+<div class='container'>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Description</th>
-      <th>Period value</th>
-      <th>Tiempo</th>
-      <th>User</th>
+      <th scope="row">Description</th>
+      <th scope="row">Period value</th>
+      <th scope="row">Tiempo</th>
+      <th scope="row">User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,5 +29,6 @@
 </table>
 
 <br>
-
 <%= link_to 'New Objective', new_objective_path %>
+</center>
+</div>

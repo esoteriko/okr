@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <h1>Key Results</h1>
-
-<table>
-  <thead>
+<div class="container">
+<table class='table '>
+  <thead class="thead-dark">
     <tr>
       <th>Description</th>
       <th>Objective</th>
@@ -16,8 +16,8 @@
     <% @key_results.each do |key_result| %>
       <tr>
         <td><%= key_result.description %></td>
-        <td><%= key_result.objective %></td>
-        <td><%= key_result.kr_measure %></td>
+        <td><%= key_result.objective.description %></td>
+        <td><%= key_result.kr_measure.name %></td>
         <td><%= link_to 'Show', key_result %></td>
         <td><%= link_to 'Edit', edit_key_result_path(key_result) %></td>
         <td><%= link_to 'Destroy', key_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +29,5 @@
 <br>
 
 <%= link_to 'New Key Result', new_key_result_path %>
+</center>
+</div>
