@@ -21,6 +21,7 @@
       <th>Description</th>
       <th>Objective</th>
       <th>Kr measure</th>
+      <th>Fecha</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,6 +32,7 @@
         <td><%= key_result.description %></td>
         <td><%= key_result.objective.description %></td>
         <td><%= key_result.kr_measure.name %></td>
+        <td><%= key_result.fecha%></td>
         <td><%= link_to 'Show', key_result, class:"customLink"  %></td>
         <td><%= link_to 'Edit', edit_key_result_path(key_result), class:"customLink" %></td>
         <td><%= link_to 'Destroy', key_result, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink" %></td>

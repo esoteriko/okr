@@ -31,9 +31,8 @@
             <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
           </div>
           <div class="col">
-          <%= select_tag(:tiempo_id,options_for_select(
-                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), 
-                  :class =>'form-control custom-select')%>
+          <%= form.select(:tiempo_id,options_for_select(
+                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]), class:"form-control")%>
           </div>
         </div>
       </div>
@@ -80,14 +79,20 @@
         <%=result.text_field :description,placeholder:"Descripcion del Key Result",class:"form-control"%>
       </div>
       <div class="col-md-4">
-      <%= select_tag(:kr_measure_id,options_for_select(
+      <%= result.select(:kr_measure_id,options_for_select(
                   [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]), 
                   :class =>'form-control custom-select')%>
       </div>
     </div>
-    <br>  
+    <br>
     <br>
   </div>
+  
+  <div class="container">
+  <div class="text-muted">Fecha</div>
+  <%=result.text_field :fecha, placeholder:"AAAA-MM-DD", class:"form-control"%>  
+  </div>
+
   <%end%>
 <br>
     <div class="container">

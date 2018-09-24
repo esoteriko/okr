@@ -20,7 +20,8 @@ class ObjectivesController < ApplicationController
 
   # GET /objectives/1/edit
   def edit
-    @objective.key_results.build
+    #@objective.key_results.build
+
   end
 
   # POST /objectives
@@ -71,6 +72,6 @@ class ObjectivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def objective_params
-      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id, key_results_attributes: [:id, :description, :kr_measure_id])
+      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id, key_results_attributes: [:id, :description, :kr_measure_id, :fecha])
     end
 end

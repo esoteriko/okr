@@ -69,6 +69,6 @@ class KeyResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def key_result_params
-      params.require(:key_result).permit(:description, :objective_id, :kr_measure_id)
+      params.require(:key_result).permit(:description, :objective_id, :kr_measure_id, :fecha)
     end
 end

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_230211) do
 
   create_table "key_results", force: :cascade do |t|
     t.string "description"
+    t.date "fecha"
     t.integer "objective_id"
     t.integer "kr_measure_id"
     t.datetime "created_at", null: false

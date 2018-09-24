@@ -15,21 +15,27 @@
 <h2><stronger>key_result</stronger></h2>
     <div class="container">
     <div class="text-muted">Descripcion</div>
-    <%= form.text_field :description, class:"form-control" %>
+    <%= form.text_field :description, class:"form-control", placeholder:"Agregue una descripcion" %>
     </div>
 <br>
 
   <div class="container">
     <div class="text-muted">Objetivo</div>
-    <%=form.number_field :objective_id, class:"form-control"%>
+    <%=form.number_field :objective_id, class:"form-control", placeholder:"Agregue un objetivo"%>
   </div>
   <br>
   <div class="container">
     <div class="text-muted">Medida</div>
-    <%= select_tag(:kr_measure_id,options_for_select(
+    <%= form.select(:kr_measure_id,options_for_select(
                   [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]), 
                   :class =>'form-control custom-select')%>
   </div>
+
+  <div class="container">
+    <div class="text-muted">Fecha</div>
+    <%=form.text_field :fecha, class:"form-control", placeholder:"AAAA-MM-DD" %>
+  </div>
+
 <br>
   <div class="actions">
     <%= form.submit "Guardar", class:"btn btn-primary" %>
