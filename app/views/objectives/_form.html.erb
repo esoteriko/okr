@@ -56,7 +56,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text">@</div>
               </div>
-              <%= form.text_field :user_id, placeholder: "Escribe el usuario", class:"form-control" %>
+              <%= form.select(:user_id, options_from_collection_for_select(User.all, "id","name", params[:objective]), prompt: "Elige un usuario", class: "form-control" )%>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@
 
   <div class="container">
     <div class="text-muted">Objetivo</div>
-    <%=form.number_field :objective_id, class:"form-control", placeholder:"Agregue un objetivo"%>
+    <%= form.select(:objective_id, options_from_collection_for_select(Objective.all, "id","description", params[:key_result]), prompt: "Elige un objectivo", class: "form-control" )%>
   </div>
   <br>
   <div class="container">
