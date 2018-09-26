@@ -24,15 +24,16 @@
   </head>
   <header>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <div class="animate">
+  
     <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+    <div class="container fluid">
       <a class="navbar-brand"><%=link_to 'Inicio', root_path, class:"customLink"%></a>
-      <a class="navbar-brand"><%=link_to 'Formulario', new_objective_path, class:"customLink"%></a>
-      <a class="navbar-brand"><%=link_to 'Key Results', new_key_result_path, class:"customLink"%></a>
-      <a class="navbar-brand"><%=link_to 'User', new_user_path, class:"customLink"%></a>
-      
-        <span class="navbar-toggler-icon"></span>
-    </nav>
+      <a class="navbar-brand"><%=link_to 'Objetivos', objectives_path, class:"customLink"%></a>
+      <a class="navbar-brand"><%=link_to 'User', users_path, class:"customLink"%></a>
+    </div>
+    <span class="navbar-toggler-icon"></span>
+        </nav>
+
   </header>
 
   <body> 

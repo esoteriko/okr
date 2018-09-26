@@ -21,14 +21,14 @@
 
   <div class="container">
     <div class="text-muted">Objetivo</div>
-    <%= form.select(:objective_id, options_from_collection_for_select(Objective.all, "id","description", params[:key_result]), prompt: "Elige un objectivo", class: "form-control" )%>
+    <%= form.select(:objective_id, options_from_collection_for_select(
+      Objective.all, "id","description", params[:key_result]),{},{ class:"form-control custom-select"} )%>
   </div>
   <br>
   <div class="container">
     <div class="text-muted">Medida</div>
     <%= form.select(:kr_measure_id,options_for_select(
-                  [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]), 
-                  :class =>'form-control custom-select')%>
+                  [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
   </div>
 
   <div class="container">

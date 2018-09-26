@@ -14,39 +14,35 @@
 <br>
 <center>
 <div class="container">
-<div class="card">
-<div class="card-body">
-<strong class="cart-title">Objetivos creados</strong><br><br>
-
-<table class="table">
-<tbody>
-
-<tr>
-<th scope="row">
-  <strong class="card-subtitle mb-2 text-muted">User name:</strong>
-</th>
-<td>
-  <%= @objective.user.name %>
-</td>
-</tr>
-
-<tr>
-<th scope="row">
-  <strong class="card-subtitle mb-2 text-muted">Descripcion:</strong>
-</th>
-<td>
-  <%= @objective.description %>
-</td>
-</tr>
-
-<tr>
-<th scope="row">
-  <strong class="card-subtitle mb-2 text-muted">Periodo de tiempo:</strong>
-</th>
-<td>
-  <%= @objective.period_value %> <%= @objective.tiempo.name%>
-</td>
-</tr>
+  <div class="card">
+    <div class="card-body">
+      <strong class="cart-title">Objetivos creados</strong><br><br>
+      <table class="table">
+      <tbody>
+      <tr>
+        <th scope="row">
+          <strong class="card-subtitle mb-2 text-muted">Usuario:</strong>
+        </th>
+        <td>
+          <%= @objective.user.name %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <strong class="card-subtitle mb-2 text-muted">Descripcion:</strong>
+        </th>
+        <td>
+          <%= @objective.description %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <strong class="card-subtitle mb-2 text-muted">Periodo de tiempo:</strong>
+        </th>
+        <td>
+          <%= @objective.period_value %> <%= @objective.tiempo.name%>
+        </td>
+      </tr>
 
 <tr>
 <th>
