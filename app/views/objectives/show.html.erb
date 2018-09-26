@@ -44,19 +44,34 @@
         </td>
       </tr>
 
-<tr>
+      <tr>
+        <th>
+          <strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
+        </th>
+        <td>
+          <% if @objective.key_results.any? %>
+          <ul class="lis-group list-group-flush">
+          <% @objective.key_results.each do |result| %>
+            <li class="list-group-item"><%= link_to result, result, class:"customLink" %></li> 
+            <% end %>
+          </ul>
+          <% else %>
+          <p>no hay key_results</p>
+          <% end %>
+        <td>
+      <tr>
 <th>
-  <strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
+  <strong class="card-subtitle mb-2 text-muted">Group</strong>
 </th>
 <td>
-<% if @objective.key_results.any? %>
+<% if @objective.groups.any? %>
   <ul class="lis-group list-group-flush">
-    <% @objective.key_results.each do |result| %>
-    <li class="list-group-item"><%= link_to result, result, class:"customLink" %></li> 
+    <% @objective.groups.each do |group| %>
+    <li class="list-group-item"><%= link_to group, group, class:"customLink" %></li> 
     <% end %>
   </ul>
 <% else %>
-  <p>no hay key_results</p>
+  <p>no groups</p>
 <% end %>
 
 </td>

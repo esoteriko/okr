@@ -1,23 +1,23 @@
-
-
 <%= form_with(model: objective, local: true) do |form| %>
-  <% if objective.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(objective.errors.count, "error") %> prohibited this objective from being saved:</h2>
-
-      <ul>
-      <% objective.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <center>
   <div class="panel panel default">
     <div class="panel">
       <h2 class="panel-header"><strong>Formulario</strong></h2>
     </div>
+
+    <div class="container">
+    <% if objective.errors.any? %>
+    <div  class="alert alert-danger">                
+      <h5><%= pluralize(objective.errors.count, "error") %> no permiten que se guarde el formulario</h5>
+        <ul class="list-group">
+          <% objective.errors.full_messages.each do |message| %>
+          <li class=><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
+    <% end %>
+    </div>
+
     <div class="panel-body">
       <div class="container">
         <div class="text-muted ">Objetivo</div>
@@ -93,6 +93,12 @@
   </div>
 
   <%end%>
+ <br> 
+  <%= form.fields_for(:groups) do |group| %>
+    <%=group.text_field :name,placeholder:"Nombre del grupo",class:"form-control"%>
+    <%=group.text_field :group_type_id,placeholder:"Tipo de grupo",class:"form-control"%>
+  <%end%>
+
 <br>
     <div class="container">
       <%=form.submit "Guardar", class:"btn btn-primary"%>

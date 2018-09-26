@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :groups
+  resources :group_types
   resources :key_results
   resources :kr_measures
   resources :tiempos

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_230211) do
+ActiveRecord::Schema.define(version: 2018_09_26_221732) do
 
   create_table "group_types", force: :cascade do |t|
     t.string "name"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2018_09_19_230211) do
   end
 
   create_table "groups_objectives", id: false, force: :cascade do |t|
-    t.integer "groups_id"
-    t.integer "objectives_id"
-    t.index ["groups_id"], name: "index_groups_objectives_on_groups_id"
-    t.index ["objectives_id"], name: "index_groups_objectives_on_objectives_id"
+    t.integer "group_id"
+    t.integer "objective_id"
+    t.index ["group_id"], name: "index_groups_objectives_on_group_id"
+    t.index ["objective_id"], name: "index_groups_objectives_on_objective_id"
   end
 
   create_table "key_results", force: :cascade do |t|
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_230211) do
   create_table "objectives", force: :cascade do |t|
     t.string "description"
     t.integer "period_value"
+    t.date "fecha"
     t.integer "tiempo_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

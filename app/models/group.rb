@@ -1,4 +1,8 @@
 class Group < ApplicationRecord
-    has_and_belongs_to_many :objectives
-    belongs_to :group_type 
+    belongs_to :group_type
+    has_and_belongs_to_many :objectives, dependent: :destroy
+
+def to_s
+   name
+end
 end
