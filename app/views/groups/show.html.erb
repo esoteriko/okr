@@ -1,14 +1,52 @@
-<p id="notice"><%= notice %></p>
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
 
-<p>
-  <strong>Name:</strong>
+
+</style>
+<br>
+<center>
+<div class="container">
+<div class="card">
+<div class="card-body">
+<strong class="cart-title">Grupos Creados</strong><br><br>
+
+<table class="table">
+<tbody>
+
+<tr>
+<th scope="row">
+  <strong class="card-subtitle mb-2 text-muted">Nombre del grupo:</strong>
+</th>
+<td>
   <%= @group.name %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.group_type.name %>
-</p>
+<tr>
+<th scope="row">
+  <strong class="card-subtitle mb-2 text-muted">Tipo de Grupo</strong>
+</th>
+<td>
+  <%= @group.group_type.name %> 
+</td>
+</tr>
+
+
+</tbody>
+</table>
+<p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+</div>
+</div>
+</div>
+</center>

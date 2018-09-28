@@ -10,4 +10,4 @@ class Objective < ApplicationRecord
   validates_presence_of :description, :period_value, :user 
 end
 
-objective.key_result
+
