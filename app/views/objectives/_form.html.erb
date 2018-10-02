@@ -1,3 +1,7 @@
+<script>
+function agregar_caja(){
+document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='col'><input type=text class='form-control' name='caja'></div><div class='col-md-4'><input type=text class='form-control' name='caja'></div><br>"
+}</script>
 <%= form_with(model: objective, local: true) do |form| %>
   <center>
   <div class="panel panel default">
@@ -87,19 +91,24 @@
                   [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
       </div>
     </div>
+    <div id="cajas"></div>
     <br>
   </div>
   
   <div class="container">
+  <input type=button onclick="agregar_caja()" value="+" class="btn btn-primary">
+  </div>
+<br><br>
+  <div class="container">
   <div class="text-muted">Fecha</div>
   <%=result.text_field :fecha, placeholder:"AAAA-MM-DD", class:"form-control"%>  
   </div>
+  
   <%end%>
 
     <div class="container">
     <br> <%=form.submit "Guardar", class:"btn btn-primary"%>
     </div>
     <%end%>
+    
 </center>
-
-  
