@@ -35,6 +35,8 @@ class KeyResultsController < ApplicationController
         format.json { render json: @key_result.errors, status: :unprocessable_entity }
       end
     end
+
+    
   end
 
   # PATCH/PUT /key_results/1
@@ -69,6 +71,6 @@ class KeyResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def key_result_params
-      params.require(:key_result).permit(:description, :objective_id, :kr_measure_id, :fecha)
+      params.require(:key_result).permit(:description, :objective_id, :kr_measure_id, :fecha, :value)
     end
 end

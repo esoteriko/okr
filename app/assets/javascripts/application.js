@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require chartkick
 //= require_tree .
 function Alert() {
     

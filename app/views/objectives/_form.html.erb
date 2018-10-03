@@ -1,6 +1,6 @@
 <script>
 function agregar_caja(){
-document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='col'><input type=text class='form-control' name='caja'></div><div class='col-md-4'><input type=text class='form-control' name='caja'></div><br>"
+document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='col'><input type=text class='form-control' placeholder='Descripcion del Key Result' name='caja'></div><div class='col-md-4'><input type=text class='form-control' placeholder='Seleccione una' name='caja'></div><br>"
 }</script>
 <%= form_with(model: objective, local: true) do |form| %>
   <center>
@@ -75,21 +75,22 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
     <%= form.fields_for(:key_results) do |result| %>
 
     <div class="container">
-        <div class="row">
-      <div class="col text-muted">Key Results</div> <div class="col text-muted"> Tipo de medida</div>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div class="row">
-        <div class="col">
+        
+      <div class="col text-muted">Key Results</div> 
         <%=result.text_field :description,placeholder:"Descripcion del Key Result",class:"form-control"%>
-      </div>
-      <div class="col-md-4">
-      <%= result.select(:kr_measure_id,options_for_select(
-                  [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
-      </div>
+
+    </div>
+<br>
+    <div class="container">
+    <div class="col text-muted">Medida</div>
+    <div class="row">
+    <div class="col">
+    <%= result.text_field :description,placeholder:"Valor",class:"form-control"%>
+    </div>
+    <div class="col"><%= result.select(:kr_measure_id,options_for_select(
+      [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
+    </div>
+    
     </div>
     <div id="cajas"></div>
     <br>

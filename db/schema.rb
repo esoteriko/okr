@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_221732) do
   create_table "key_results", force: :cascade do |t|
     t.string "description"
     t.date "fecha"
+    t.integer "value"
     t.integer "objective_id"
     t.integer "kr_measure_id"
     t.datetime "created_at", null: false
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_221732) do
   create_table "objectives", force: :cascade do |t|
     t.string "description"
     t.integer "period_value"
-    t.date "fecha"
+    t.integer "value"
     t.integer "tiempo_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
