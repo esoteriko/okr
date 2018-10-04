@@ -1,3 +1,4 @@
+<center>
 <%= form_with(model: key_result, local: true) do |form| %>
   <% if key_result.errors.any? %>
     <div id="error_explanation">
@@ -26,14 +27,20 @@
   </div>
   <br>
   <div class="container">
-    <div class="text-muted">Medida</div>
-    <%= form.select(:kr_measure_id,options_for_select(
-                  [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
+  <div class="text-muted">Medida</div>
+  <div class="row">
+  <div class="col">
+  <%= form.text_field :value, class:"form-control", placeholder:"Agregue un valor"%>
+  </div>
+  <div class="col"><%= form.select(:kr_measure_id,options_for_select(
+    [["Selecciona una", ""], ["Prociento","1"], ["Numerico","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
+    </div>           
+  <div>
   </div>
 
   <div class="container">
     <div class="text-muted">Fecha</div>
-    <%=form.text_field :fecha, class:"form-control", placeholder:"AAAA-MM-DD" %>
+    <%=form.date_field :fecha, class:"form-control", placeholder:"AAAA-MM-DD" %>
   </div>
 
 <br>
@@ -45,3 +52,4 @@
   
   
 <% end %>
+</center>

@@ -55,21 +55,11 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
       </div>
     </div>
 <br>
-    <%= form.fields_for(:groups) do |group| %>
-
       <div class="container">
-        <div class="row">
-          <div class="col">
             <div class="text-muted">Nombre de Grupo</div>
-            <%=group.text_field :name,placeholder:"Nombre del grupo",class:"form-control"%>
+            <%= form.select(:group_id, options_from_collection_for_select(Group.all, "id","name", params[:objective]),{},{ class:"form-control custom-select"} )%>
             <br>
-          </div>
-          <div class="col">
-            <div class="text-muted">Tipo de grupo</div>
-            <%= group.select(:group_type_id,options_for_select(
-                  [["Selecciona una", ""], ["Empresa","1"], ["Equipo","2"], ["Personal","3"]]),{},{ class:"form-control custom-select"})%>
-            <br>
-      </div><%end%>
+      </div>
 
 <br>
     <%= form.fields_for(:key_results) do |result| %>
@@ -102,7 +92,7 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
 <br><br>
   <div class="container">
   <div class="text-muted">Fecha</div>
-  <%=result.text_field :fecha, placeholder:"AAAA-MM-DD", class:"form-control"%>  
+  <%=result.date_field :fecha, placeholder:"AAAA-MM-DD", class:"form-control"%>  
   </div>
   
   <%end%>

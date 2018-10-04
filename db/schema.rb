@@ -54,11 +54,12 @@ ActiveRecord::Schema.define(version: 2018_09_26_221732) do
   create_table "objectives", force: :cascade do |t|
     t.string "description"
     t.integer "period_value"
-    t.integer "value"
     t.integer "tiempo_id"
     t.integer "user_id"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_objectives_on_group_id"
     t.index ["tiempo_id"], name: "index_objectives_on_tiempo_id"
     t.index ["user_id"], name: "index_objectives_on_user_id"
   end

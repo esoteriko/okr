@@ -1,9 +1,23 @@
+<style>
+.customLink:link{
+  background-color: none;
+  color: black;
+}
+.customLink:hover, customLink:active {
+  text-decoration: underline;
+  background: none;
+  color: gray;
+}
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<center>
 
-<table>
-  <thead>
+<h1>Groups</h1>
+<div class="container">
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Tipo de grupo</th>
@@ -16,14 +30,16 @@
       <tr>
         <td><%= group.name %></td>
         <td><%= group.group_type.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', group, class:"customLink" %></td>
+        <td><%= link_to 'Edit', edit_group_path(group), class:"customLink" %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink"%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to 'New Group', new_group_path, class:"customLink" %>
+</center>

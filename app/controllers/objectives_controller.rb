@@ -73,6 +73,6 @@ class ObjectivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def objective_params
-      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id, key_results_attributes: [:id, :description, :kr_measure_id, :fecha, :value], groups_attributes: [:id,:name,:group_type_id])
+      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id,:group_id, key_results_attributes: [:id, :description, :kr_measure_id, :fecha, :value])
     end
 end

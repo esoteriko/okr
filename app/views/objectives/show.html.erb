@@ -46,6 +46,16 @@
 
       <tr>
         <th>
+        <strong class="card-subtitle mb-2 text-muted">Group:</strong>
+        </th>
+        <td>
+        <%= @objective.groups.first%>
+        <%= @objective.groups.map{|g|g.name}.join(",")%>
+        </td>
+      </tr>
+
+      <tr>
+        <th>
           <strong class="card-subtitle mb-2 text-muted">Key Result:</strong>
         </th>
         <td>
@@ -59,22 +69,7 @@
           <p>no hay key_results</p>
           <% end %>
         <td>
-      <tr>
-<th>
-  <strong class="card-subtitle mb-2 text-muted">Group</strong>
-</th>
-<td>
-<% if @objective.groups.any? %>
-  <ul class="lis-group list-group-flush">
-    <% @objective.groups.each do |group| %>
-    <li class="list-group-item"><%= link_to group, group, class:"customLink" %></li> 
-    <% end %>
-  </ul>
-<% else %>
-  <p>no groups</p>
-<% end %>
-
-</td>
+      </tr>
 </tbody>
 </table>
 <p id="notice"><%= notice %></p>
