@@ -3,9 +3,8 @@
 one:
   description: MyString
   period_value: 1
-  tiempo: one
+  tiempo: año
 
-two:
-  description: MyString
-  period_value: 1
-  tiempo: two
+
+
+

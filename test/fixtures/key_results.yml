@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  description: MyString
+prueba:
+  description: prueba1
   objective: one
-  kr_measure: one
+  kr_measure: porcentaje
 
-two:
-  description: MyString
-  objective: two
-  kr_measure: two
+
