@@ -6,6 +6,7 @@ gem 'bootstrap', '~>4.0.0'
 gem 'bundler', '~>1.16.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'chartkick'
+gem 'pry'
 
 
 

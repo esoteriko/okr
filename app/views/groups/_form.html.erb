@@ -1,3 +1,4 @@
+<center>
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
@@ -10,20 +11,26 @@
       </ul>
     </div>
   <% end %>
+<center>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<h2><stronger>Grupos</stronger></h2>
+    <div class="container">
+    <div class="text-muted">Group Name</div>
+    <%= form.text_field :name, class:"form-control", placeholder:"Nombre del grupo" %>
+    </div>
+<br>
+
+  <div class="container">
+    <div class="text-muted">Objetivo</div>
+    <%=form.number_field :group_type_id, class:"form-control", placeholder:"Tipo de grupo"%>
   </div>
-
-  <div class="field">
-    <%= form.label :group_type %>
-    <%= form.text_field :group_type_id %>
-  </div>
-
-
-
+<br>
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit "Guardar", class:"btn btn-primary" %>
+     </div>
+</center>
+</div>
+  
+  
 <% end %>
+</center>
