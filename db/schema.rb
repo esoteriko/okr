@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_221732) do
+ActiveRecord::Schema.define(version: 2018_10_09_013714) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer "objective_id"
+    t.integer "group_id"
+    t.string "assigned"
+    t.date "at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_assignments_on_group_id"
+    t.index ["objective_id"], name: "index_assignments_on_objective_id"
+  end
 
   create_table "group_types", force: :cascade do |t|
     t.string "name"

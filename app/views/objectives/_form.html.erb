@@ -75,7 +75,7 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
     <div class="col text-muted">Medida</div>
     <div class="row">
     <div class="col">
-    <%= result.text_field :description,placeholder:"Valor",class:"form-control"%>
+    <%= result.text_field :value,placeholder:"Valor",class:"form-control"%>
     </div>
     <div class="col"><%= result.select(:kr_measure_id,options_for_select(
       [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>

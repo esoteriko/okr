@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :assignments
   resources :groups
   resources :group_types
   resources :key_results
