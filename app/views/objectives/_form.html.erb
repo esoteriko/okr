@@ -35,8 +35,7 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
             <%= form.text_field :period_value, class: "form-control", placeholder: "Periodo de tiempo"%>
           </div>
           <div class="col">
-          <%= form.select(:tiempo_id,options_for_select(
-                  [["Selecciona una", ""], ["Años","1"], ["Meses","2"], ["Semanas","3"], ["Dias","4"]]),{},{ class:"form-control custom-select"})%>
+          <%= form.select(:tiempo_id, options_from_collection_for_select(Tiempo.all, "id","name", params[:objective]),{},{ class:"form-control custom-select"} )%>
           </div>
         </div>
       </div>
@@ -55,12 +54,15 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
       </div>
     </div>
 <br>
+<%= form.fields_for (:group_objectives) do |go| %>
       <div class="container">
             <div class="text-muted">Nombre de Grupo</div>
-            <%= form.select(:group_id, options_from_collection_for_select(Group.all, "id","name", params[:objective]),{},{ class:"form-control custom-select"} )%>
+            <%= go.select(:groups_objectives, options_from_collection_for_select(Group.all, "id","name", params[:objective]),{},{ class:"form-control custom-select"} )%>
+            
+          
             <br>
       </div>
-
+<%end%>
 <br>
     <%= form.fields_for(:key_results) do |result| %>
 
@@ -77,8 +79,8 @@ document.getElementById("cajas").innerHTML+="<br><div class='row'><div class='co
     <div class="col">
     <%= result.text_field :value,placeholder:"Valor",class:"form-control"%>
     </div>
-    <div class="col"><%= result.select(:kr_measure_id,options_for_select(
-      [["Selecciona una", ""], ["Porcentaje","1"], ["Numero","2"], ["Boolean","3"]]),{},{ class:"form-control custom-select"})%>
+    <div class="col">
+    <%= result.select(:kr_measure_id, options_from_collection_for_select(KrMeasure.all, "id","name", params[:objective]),{},{ class:"form-control custom-select"} )%>
     </div>
     
     </div>

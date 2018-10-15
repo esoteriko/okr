@@ -29,7 +29,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
-        <td><%= group.group_type.name %></td>
+        <td><%= group.group_type %></td>
         <td><%= link_to 'Show', group, class:"customLink" %></td>
         <td><%= link_to 'Edit', edit_group_path(group), class:"customLink" %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink"%></td>

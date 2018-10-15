@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    require "pry"; binding.pry
   end
 
   # GET /groups/1

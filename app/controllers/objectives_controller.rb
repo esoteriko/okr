@@ -5,19 +5,20 @@ class ObjectivesController < ApplicationController
   # GET /objectives.json
   def index
     @objectives = Objective.all
-    #require "pry"; binding.pry
+    
   end
 
   # GET /objectives/1
   # GET /objectives/1.json
   def show
+    #require "pry"; binding.pry
   end
 
   # GET /objectives/new
   def new
     @objective = Objective.new
     @objective.key_results.build
-    @objective.groups.build
+    
   end
 
   # GET /objectives/1/edit
@@ -74,6 +75,6 @@ class ObjectivesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def objective_params
-      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id, :group_id, key_results_attributes: [:id, :description, :kr_measure_id, :fecha, :value])
+      params.require(:objective).permit(:description, :period_value, :tiempo_id, :user_id, key_results_attributes: [:id, :description, :kr_measure_id, :fecha, :value], groups_objectives_attributes: [:id ,:objective_id, :group_id])
     end
 end

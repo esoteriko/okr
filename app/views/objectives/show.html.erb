@@ -49,8 +49,7 @@
         <strong class="card-subtitle mb-2 text-muted">Group:</strong>
         </th>
         <td>
-        <%= @objective.groups.first%>
-        
+        <%= @objective.groups.map{|g|g.name}.join(",")%>                 
         </td>
       </tr>
 

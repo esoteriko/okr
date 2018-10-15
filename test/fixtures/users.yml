@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 usuario1:
-  name: prueba
+  name: prueba1
   password: hola1
 
 usuario2:
