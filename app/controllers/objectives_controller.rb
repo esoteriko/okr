@@ -11,7 +11,7 @@ class ObjectivesController < ApplicationController
   # GET /objectives/1
   # GET /objectives/1.json
   def show
-    #require "pry"; binding.pry
+    require "pry"; binding.pry
   end
 
   # GET /objectives/new

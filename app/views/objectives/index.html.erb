@@ -35,7 +35,7 @@
         <td><%= objective.period_value %> <%= objective.tiempo.name %></td>
         <td><%= objective.user.name%></td>
         <td><%= objective.key_results.map{|k|k.value}.join(",")%></td>
-        <td><%= objective.groups.map{|g|g}.join(",")%></td>  
+        <td><%= objective.groups.map{|g|g.name}.join(",")%></td>  
         <td><%= link_to 'Show', objective, class:"customLink" %></td>
         <td><%= link_to 'Edit', edit_objective_path(objective), class:"customLink" %></td>
         <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink" %></td>

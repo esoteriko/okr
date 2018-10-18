@@ -5,6 +5,7 @@ class KeyResult < ApplicationRecord
   validates_presence_of :description, :fecha
 
   def to_s
-    description
+     "#{description}"
   end
+
 end
