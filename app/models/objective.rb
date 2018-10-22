@@ -10,9 +10,7 @@ class Objective < ApplicationRecord
   
 
   validates_presence_of :description, :period_value, :user
-  def problem
-    puts "1"
-  end
+  
   
 end
 

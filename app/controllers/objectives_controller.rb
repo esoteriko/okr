@@ -31,6 +31,7 @@ class ObjectivesController < ApplicationController
   # POST /objectives.json
   def create
     @objective = Objective.new(objective_params)
+    
 
     respond_to do |format|
       if @objective.save

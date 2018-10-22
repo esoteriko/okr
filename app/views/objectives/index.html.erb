@@ -31,14 +31,24 @@
   <tbody>
     <% @objectives.each do |objective| %>
       <tr>
+      
         <td><%= objective.description %></td>
-        <td><%= objective.period_value %> <%= objective.tiempo.name %></td>
+        <%if objective.period_value <= 1 %>
+        <td><%= objective.period_value %> <%= objective.tiempo.name.singularize %></td>
+        <%else%>
+        <td><%= objective.period_value %> <%= objective.tiempo.name%></td>
+        <%end%>
         <td><%= objective.user.name%></td>
-        <td><%= objective.key_results.map{|k|k.value}.join(",")%></td>
+        <%if objective.key_results.map{|k|k.kr_measure.name} == "Porcentaje"%>
+        <td><%= objective.key_results.map{|k|k.value}.join(",")%><%= objective.key_results.map{|k|k.kr_measure.name}.join(",")%>%</td>
+        <%else%>
+        <td><%= objective.key_results.map{|k| k.kr_measure.name}.join(",")%></td>
+        <%end%>
         <td><%= objective.groups.map{|g|g.name}.join(",")%></td>  
         <td><%= link_to 'Show', objective, class:"customLink" %></td>
         <td><%= link_to 'Edit', edit_objective_path(objective), class:"customLink" %></td>
         <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' }, class:"customLink" %></td>
+        
       </tr>
     <% end %>
   </tbody>
